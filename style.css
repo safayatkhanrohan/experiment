@@ -8,6 +8,9 @@
     --sidebar-hover: #F7F7F7;
     --sidebar-icon-bg: #607d8b;
     --dashboard-bg: #EFEFEF;
+    --green: #4CAF50;
+    --skyblue: #2196F3;
+    --red: #E91E63;
 }
 
 /* reset the default styles */
@@ -31,7 +34,7 @@ body {
 }
 
 /* ensure all the list items are stacked vertically */
-li {
+.sidebar li, .main-header li {
     display: flex;
     align-items: center;
 }
@@ -58,7 +61,7 @@ li {
     background-color: #fff;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: width 0.3s;
-    height: calc(100vh - 55px);
+    height: calc(100% - 55px);
 }
 
 .sidebar.collapsed {
@@ -178,7 +181,11 @@ li {
 }
 
 .inner-toggle {
-    font-size: 12px !important;
+    font-size: 12px;
+}
+
+.sidbar-nav .inner-drop {
+    font-size: 13px;
 }
 .sidbar-nav li:first-child .icon-container {
     background-color: var(--sidebar-icon-bg);
@@ -226,7 +233,7 @@ li {
 }
 
 .sidbar-nav .inner-drop a {
-    padding: 10px 0 10px 65px;
+    padding: 10px 0 10px 55px;
     overflow: hidden;
 }
 
@@ -252,13 +259,61 @@ li {
     align-items: center;
     color: #fff;
     padding: 0 20px;
+    position: relative;
 }
 
 
-.header-nav li ion-icon {
+.header-nav #nav-toggler ion-icon {
     font-size: 20px;
     padding: 5px 15px;
     cursor: pointer;
+}
+
+.header-nav .search-container {
+    margin-left: 30px;
+    
+}
+
+.header-nav .search-container .form-search {
+    width: 240px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.header-nav .search-container .form-search button {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    color: var(--sidebar-font);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    right: 15px;
+}
+
+.header-nav .scan {
+    margin-left: 30px;
+}
+
+.header-nav .scan a {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .site-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.header-nav .site-logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
 }
 
 /* mian body */
@@ -277,7 +332,73 @@ li {
 }
 
 .main > .row {
-    margin: 20px 10px;
+    margin: 0 5px;
+}
+
+.panel ul li {
+    border-left: 1px solid var(--side-header-bg);
+    position: relative;
+    padding: 3px 0 3px 30px
+}
+
+.panel ul li .point {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    transform: translateX(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    background-color: var(--side-header-bg);
+}
+
+.panel ul li span {
+    font-size: 12px;
+}
+
+/* utility classes */
+
+.fs-sm {
+    font-size: 12px !important;
+}
+
+.fs-md {
+    font-size: 14px !important;
+}
+
+.fs-x {
+    font-size: 18px !important;
+}
+
+.panel {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.panel:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel ion-icon {
+    font-size: 42px;
+    color: var(--sidebar-font);
+}
+
+.panel-header {
+    padding: 14px 0;
+    margin: 0 24px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+
+.panel-footer {
+    padding: 8px 24px;
 }
 
 /* modify bootstrap classes */
@@ -290,4 +411,76 @@ li {
 .container-fluid {
     padding: 0 !important;
     width: 100%;
+}
+
+.text-primary {
+    color: var(--main-header-bg) !important;
+}
+
+.bg-primary {
+    background-color: var(--main-header-bg) !important;
+}
+
+.text-light {
+    color: var(--sidebar-font) !important;
+}
+
+.bg-success {
+    background-color: var(--green) !important;
+}
+
+.bg-info {
+    background-color: var(--skyblue) !important;
+}
+
+.bg-danger {
+    background-color: var(--red) !important;
+}
+
+.text-success {
+    color: var(--green) !important;
+}
+
+.text-info {
+    color: var(--skyblue) !important;
+}
+
+.text-danger {
+    color: var(--red) !important;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th,
+.table td {
+    padding: 10px 22px;
+    text-align: left;
+    border-bottom: 1px solid #e4e4e4 !important;
+}
+
+.table tr:last-child td {
+    border-bottom: none !important;
+}
+
+.form-control {
+ border: 1px solid #f7f7f7;
+}
+
+.form-control:focus {
+    /*remove the default border color*/
+    border-color: #f7f7f7;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+    .show-xs {
+        display: block !important;
+    }
+    .hide-xs {
+        display: none !important;
+    }
+    
 }
