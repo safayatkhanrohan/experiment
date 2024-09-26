@@ -6,9 +6,7 @@ toggler.onclick  = () => {
     if (windowWidth > 768) {
       sidebar.classList.toggle("collapsed");
     } else {
-      const sidebarNavContainer = sidebar.querySelector(".sidebar-nav-container");
-      console.log(sidebarNavContainer);
-      sidebarNavContainer.classList.toggle("active");
+      sidebar.classList.toggle("active");
 
       // remove collapsed class from sidebar
       sidebar.classList.remove("collapsed");
