@@ -81,6 +81,7 @@ body {
   }
   .sidebar-nav-container {
     position: fixed;
+    z-index: 1000;
     width: 0;
   }
   .sidebar-nav-container.active {
@@ -449,6 +450,10 @@ body {
     color: var(--red) !important;
 }
 
+.table-responsive {
+    overflow-x: auto;
+}
+
 .table {
     border-collapse: collapse;
     width: 100%;
@@ -459,6 +464,7 @@ body {
     padding: 10px 22px;
     text-align: left;
     border-bottom: 1px solid #e4e4e4 !important;
+    white-space: nowrap;
 }
 
 .table tr:last-child td {
