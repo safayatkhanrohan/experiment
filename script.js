@@ -2,17 +2,11 @@ const toggler = document.getElementById("nav-toggler");
 const sidebar = document.querySelector(".sidebar");
 const innerToggler = document.querySelectorAll(".inner-toggle");
 
-const inputFileds = document.querySelectorAll("input");
+const floatingInputs = document.querySelectorAll(".floating-label input");
 
-// initialize datepicker
-$(".datepicker").datepicker({
-  format: "mm/dd/yyyy",
-  autoclose: true,
-});
-
-inputFileds.forEach((input) => {
+floatingInputs.forEach((input) => {
   const label = input.nextElementSibling;
-
+  
   input.addEventListener("input", function () {
     if (input.value.trim() !== "") {
       label.classList.add("typed");
@@ -22,7 +16,13 @@ inputFileds.forEach((input) => {
   });
 });
 
+$(".datepicker").datepicker({
+  format: "mm/dd/yyyy",
+  autoclose: true,
+});
+
 toggler.onclick = () => {
+  // initialize datepicker
   const windowWidth = window.innerWidth;
   if (windowWidth > 768) {
     sidebar.classList.toggle("collapsed");
