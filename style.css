@@ -2,9 +2,9 @@
 
 /*declare colors*/
 :root {
-  --side-header-bg: #303f9f;
-  --main-header-bg: #3f51b5;
-  --sidebar-font: #464646;
+  --primary-deep: #303f9f;
+  --primary: #3f51b5;
+  --light-font: #464646;
   --sidebar-hover: #f7f7f7;
   --sidebar-icon-bg: #607d8b;
   --dashboard-bg: #efefef;
@@ -33,6 +33,57 @@ body {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.5px;
 }
+
+/* login page */
+
+#login-container {
+  height: 100vh;
+}
+
+#login-form {
+  width: 420px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.14);
+  color: rgba(70, 70, 70);
+  text-align: center;
+}
+
+#login-form h2 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0.5rem;
+}
+
+#login-form h5 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#login-form .form-check input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+#login-form .form-check input:checked {
+  border: 1px solid #303f9f;
+  background-color: #303f9f;
+  color: #fff;
+  cursor: pointer;
+}
+
+#login-form .form-check label {
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+/* Dashboard */
 
 /* ensure all the list items are stacked vertically */
 .sidebar li,
@@ -82,12 +133,10 @@ body {
   width: 220px;
 }
 
-
-
 .sidebar .sidebar-header {
   width: 100%;
   height: 55px;
-  background-color: var(--side-header-bg);
+  background-color: var(--primary-deep);
   color: #fff;
 }
 
@@ -145,7 +194,7 @@ body {
 
 .profile .content a {
   font-size: 14px;
-  color: var(--main-header-bg);
+  color: var(--primary);
 }
 
 .profile .content .designation {
@@ -153,7 +202,7 @@ body {
 }
 
 .profile .content .dropdown-item {
-  color: var(--sidebar-font);
+  color: var(--light-font);
 }
 
 /* sidebar nav */
@@ -163,7 +212,7 @@ body {
   width: 100%;
   padding: 5px 0;
   padding-right: 1rem;
-  color: var(--sidebar-font);
+  color: var(--light-font);
   align-items: center;
 }
 
@@ -236,6 +285,10 @@ body {
   height: max-content;
 }
 
+.sidbar-nav .toggle-icon.rotate {
+  transform: rotate(-90deg);
+}
+
 /* main section */
 
 .main {
@@ -250,15 +303,15 @@ body {
 }
 
 .main-header {
-    background-color: var(--main-header-bg);
-    height: 55px;
-    position: fixed;
-    width: calc(100% - 220px);
-    margin-left: 220px;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    transition: width 0.3s;
+  background-color: var(--primary);
+  height: 55px;
+  position: fixed;
+  width: calc(100% - 220px);
+  margin-left: 220px;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  transition: width 0.3s;
 }
 
 .sidebar.collapsed:hover + .main .main-header {
@@ -293,11 +346,20 @@ body {
   position: relative;
 }
 
+.header-nav .search-container .form-search input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 6px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
 .header-nav .search-container .form-search button {
   position: absolute;
   border: none;
   background-color: transparent;
-  color: var(--sidebar-font);
+  color: var(--light-font);
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -346,7 +408,7 @@ body {
 }
 
 .panel ul li {
-  border-left: 1px solid var(--side-header-bg);
+  border-left: 1px solid var(--primary-deep);
   position: relative;
   padding: 3px 0 3px 30px;
 }
@@ -359,7 +421,7 @@ body {
   width: 9px;
   height: 9px;
   border-radius: 100%;
-  background-color: var(--side-header-bg);
+  background-color: var(--primary-deep);
 }
 
 .panel ul li span {
@@ -380,19 +442,94 @@ body {
   font-size: 18px !important;
 }
 
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.end-label {
+  text-align: end;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .end-label {
+    text-align: start;
+  }
+}
+
+.btn-default {
+  color: #464646;
+  background-color: #ffffff;
+  border-color: #e0e0e0;
+}
+
+.btn-default:hover {
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.15),
+    0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* floating label input-group */
+
+.floating-label {
+  position: relative;
+}
+
+.floating-label input {
+  margin-top: 2rem;
+  border: none;
+  border-bottom: 1px solid #efefef;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  padding: 5px 0;
+}
+
+.floating-label input:focus {
+  border-bottom: 2px solid #303f9f;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+
+.floating-label input:focus + label {
+  top: 5px;
+  font-size: 12px;
+  color: #303f9f;
+}
+
+.floating-label label.typed {
+  top: 1rem;
+}
+
 .panel {
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s ease;
 }
 
 .panel:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.14);
 }
 
 .panel ion-icon {
   font-size: 42px;
-  color: var(--sidebar-font);
+  color: var(--light-font);
+}
+
+.panel .input-group ion-icon {
+  font-size: 1rem;
 }
 
 .panel-header {
@@ -400,6 +537,7 @@ body {
   margin: 0 24px;
   font-size: 12px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .border-bottom {
@@ -410,6 +548,22 @@ body {
   padding: 8px 24px;
 }
 
+/* daily report page */
+
+.invoice-table th {
+  border: 1px solid #fff;
+  background-color: #a2a2a2;
+  color: #fff !important;
+}
+
+/* prepaid-list page */
+
+.whiteframe {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
 /* modify bootstrap classes */
 
 .dropdown-item.active,
@@ -417,21 +571,16 @@ body {
   background-color: transparent;
 }
 
-.container-fluid {
-  padding: 0 !important;
-  width: 100%;
-}
-
 .text-primary {
-  color: var(--main-header-bg) !important;
+  color: var(--primary) !important;
 }
 
 .bg-primary {
-  background-color: var(--main-header-bg) !important;
+  background-color: var(--primary) !important;
 }
 
 .text-light {
-  color: var(--sidebar-font) !important;
+  color: var(--light-font) !important;
 }
 
 .bg-success {
@@ -450,6 +599,43 @@ body {
   color: var(--green) !important;
 }
 
+.btn {
+  font-size: 14px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 8px 16px;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: #3e4fb1;
+}
+
+.btn-primary:hover {
+  background-color: #32408f !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-success {
+  background-color: var(--green) !important;
+  border-color: #4aab4e !important;
+}
+
+.btn-success:hover {
+  background-color: #3d8b40 !important;
+}
+
 .text-info {
   color: var(--skyblue) !important;
 }
@@ -458,35 +644,77 @@ body {
   color: var(--red) !important;
 }
 
-.table-responsive {
-  overflow-x: auto;
+.form-control {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  border-radius: 0;
 }
 
-.table {
-  border-collapse: collapse;
-  width: 100%;
+.form-control:focus {
+  border-bottom: 2px solid #1976d2;
+  box-shadow: none;
+}
+
+.input-group {
+  height: 38px;
+}
+
+.input-group-text {
+  background-color: #eee;
+  border-radius: 0;
+}
+
+.form-select {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  border-radius: 0;
+}
+
+.form-select:focus {
+  border-bottom: 2px solid #1976d2;
+  box-shadow: none;
 }
 
 .table th,
 .table td {
   padding: 10px 22px;
-  text-align: left;
-  border-bottom: 1px solid #e4e4e4 !important;
-  white-space: nowrap;
+  vertical-align: middle;
 }
 
-.table tr:last-child td {
-  border-bottom: none !important;
+/* datepicker calendar */
+
+.datepicker {
+  font-size: 12px;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* also add some paddings to the days */
+
+.datepicker-days th,
+.datepicker-days td {
+  padding: 5px;
+}
+/* make sunday red */
+
+.datepicker-days th:nth-child(1),
+.datepicker-days td:nth-child(1),
+.datepicker-days td.old.day:nth-child(1),
+.datepicker-days td.new.day:nth-child(1) {
+  color: red;
 }
 
-.form-control {
-  border: 1px solid #f7f7f7;
+.datepicker th.dow,
+.datepicker th.prev {
+  color: #000 !important;
 }
 
-.form-control:focus {
-  /*remove the default border color*/
-  border-color: #f7f7f7;
-  box-shadow: none;
+/* remove the red color for left arrows */
+
+.datepicker-prev {
+  color: #000 !important;
 }
 
 @media screen and (max-width: 768px) {
