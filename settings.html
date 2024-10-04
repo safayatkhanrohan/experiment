@@ -145,8 +145,8 @@
                             <ion-icon name="chevron-back" class="toggle-icon"></ion-icon>
                         </a>
                         <ul class="inner-drop">
-                            <li><a href="./settings.html">General Settings</a></li>
-                            <li><a href="./localisation.html">Localisation</a></li>
+                            <li><a href="#">General Settings</a></li>
+                            <li><a href="#">Localisation</a></li>
                             <li><a href="#">Admintrator Users</a></li>
                             <li><a href="#">Backup/Restore</a></li>
                         </ul>
@@ -183,7 +183,7 @@
                     </li>
 
                     <li class="site-logo show-xs">
-                        <a href="./index.html">
+                        <a href="">
                             EASY BILL
                         </a>
                     </li>
@@ -200,48 +200,83 @@
             <main class="p-3">
                 <div class="panel">
                     <div class="panel-header border-bottom">
-                        Prepaid users
+                        General Settings
                     </div>
 
-                    <div class="panel-body p-4">
-                        <div class="whiteframe p-3 mb-4">
-                            
-                            <div class="d-flex gap-3 flex-wrap mb-4">
-                                <div class="flex-grow-2">
-                                    <form action="">
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                            <input type="text" name="username" id="" class="form-control" placeholder="Search by username">
-                                            <button type="submit" class="btn btn-success">Search</button>
+                    <form>
+                        <div class="panel-body p-4">
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <div class="row mb-3">
+                                        <label for="siteName" class="col-form-label col-lg-3 end-label-lg">Application
+                                            Name/ Company Name</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="siteName" class="form-control"
+                                                placeholder="Application Name">
+                                            <span class="d-block mt-1 fs-sm">This Name will be shown on the Title</span>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
 
-                                <div class="flex-grow-1">
-                                    <button type="button" class="btn btn-primary w-100 nowrap"><span class="me-2">+</span> Recharge Account</button>
+                                    <div class="row mb-3">
+                                        <label for="address"
+                                            class="col-form-label col-lg-3 end-label-lg">Address</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="address" class="form-control">
+                                            <span class="d-block mt-1 fs-sm">You can use html tag</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="phone"
+                                            class="col-form-label col-lg-3 end-label-lg">Phone Number</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="phone" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="appUrl" class="col-form-label col-lg-3 end-label-lg">APP URL</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="appUrl" class="form-control" value="https://admin-dashbaord.web.app" disabled>
+                                            <span class="d-block mt-1 fs-sm">Site Address</span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        <div class="table-responsive">
-                            <table id="datatable" class="table table-striped table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>Plan Name</th>
-                                        <th>Type</th>
-                                        <th>Created On</th>
-                                        <th>Expires On</th>
-                                        <th>Method</th>
-                                        <th>Routers</th>
-                                        <th>Manage</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <div class="panel-header border-bottom">
+                            Telegram Notification
                         </div>
-                    </div>
+                        <div class="panel-body p-4">
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <div class="row mb-3">
+                                        <label for="telegramToken"
+                                            class="col-form-label col-lg-3 end-label-lg">Telegram Token</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="telegramToken" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="telegramChatId"
+                                            class="col-form-label col-lg-3 end-label-lg">Telegram Chat ID</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="telegramChatId" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-9 offset-lg-3">
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </main>
 

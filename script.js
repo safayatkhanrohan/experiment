@@ -2,25 +2,6 @@ const toggler = document.getElementById("nav-toggler");
 const sidebar = document.querySelector(".sidebar");
 const innerToggler = document.querySelectorAll(".inner-toggle");
 
-const floatingInputs = document.querySelectorAll(".floating-label input");
-
-floatingInputs.forEach((input) => {
-  const label = input.nextElementSibling;
-  
-  input.addEventListener("input", function () {
-    if (input.value.trim() !== "") {
-      label.classList.add("typed");
-    } else {
-      label.classList.remove("typed");
-    }
-  });
-});
-
-$(".datepicker").datepicker({
-  format: "mm/dd/yyyy",
-  autoclose: true,
-});
-
 toggler.onclick = () => {
   // initialize datepicker
   const windowWidth = window.innerWidth;
@@ -62,6 +43,9 @@ innerToggler.forEach((item) => {
 
 
 // to make sure that input is focused when clicking on the input-group-text
-$(".input-group-text").click((e) => {
-  e.currentTarget.parentElement.querySelector("input").focus();
+
+document.querySelectorAll(".input-group-text").forEach((item) => {
+  item.onclick = (e) => {
+    item.parentElement.querySelector("input").focus();
+  };
 });
